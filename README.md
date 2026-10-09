@@ -18,7 +18,7 @@ From DSA problems and technical interview questions to machine-coding challenges
 - **Responsive Interface** — A responsive dashboard and modal designed for desktop and mobile screens.
 - **Form Validation** — Validate question titles using React Hook Form.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -29,7 +29,7 @@ From DSA problems and technical interview questions to machine-coding challenges
 | LocalStorage | Client-side data persistence |
 | Vite | Development server and build tooling |
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 interview-practice-tracker/
