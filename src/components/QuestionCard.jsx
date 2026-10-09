@@ -15,9 +15,11 @@ const QuestionCard = ({ title, category, difficulty, status, onComplete }) => {
     }[difficulty.toLowerCase()] || "bg-slate-100 text-slate-600";
 
   return (
-    <article className="flex flex-col gap-4 rounded-[18px] border border-[#e3e5dc] bg-[#fafaf6] px-[22px] py-5 sm:flex-row sm:items-center sm:justify-between">
+    <article className="flex flex-col gap-4 rounded-[18px] border border-[#e3e5dc] bg-[#fafaf6] px-5.5 py-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="min-w-0">
-        <h4 className="break-words font-[Manrope] font-semibold tracking-[-0.025em] text-slate-900">{title}</h4>
+        <h4 className={`font-[Manrope] font-semibold text-slate-900 ${isCompleted && 'line-through'}`}>
+          {title}
+        </h4>
         <div className="mt-2 flex flex-wrap gap-2">
           <span className="rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
             {category}
