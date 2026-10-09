@@ -48,25 +48,25 @@ const Dashboard = () => {
     );
 
   return (
-    <div className="dashboard-page min-h-screen bg-[#f7f8fc] text-slate-900">
+    <div className="min-h-screen min-w-[320px] bg-[#f3f3ed] text-[#17221d] selection:bg-[#d4f478] selection:text-[#102118]">
       <Navbar />
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-        <section className="hero-panel flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[.18em] text-indigo-600">
+        <section className="relative isolate flex min-h-[290px] flex-col justify-between gap-5 overflow-hidden rounded-[30px] bg-[#19251f] p-[clamp(28px,5vw,60px)] text-[#f7f8ef] shadow-[0_24px_70px_-45px_rgba(23,34,29,0.8)] before:absolute before:right-[4%] before:-top-[210px] before:-z-10 before:size-[440px] before:rounded-full before:border before:border-[rgba(212,244,120,0.24)] before:content-[''] before:shadow-[0_0_0_35px_rgba(212,244,120,0.035),0_0_0_75px_rgba(212,244,120,0.025),0_0_0_120px_rgba(212,244,120,0.02)] after:absolute after:-bottom-[110px] after:right-[16%] after:-z-10 after:size-[280px] after:rounded-full after:bg-[radial-gradient(circle_at_35%_30%,#d4f478,#8fae47_48%,#526b35_70%)] after:opacity-[0.88] after:blur-[0.2px] after:content-[''] sm:flex-row sm:items-end max-[640px]:min-h-[350px] max-[640px]:items-start max-[640px]:justify-center max-[640px]:rounded-3xl max-[640px]:after:-right-[60px] max-[640px]:after:-bottom-[150px] max-[640px]:after:size-[220px] max-[640px]:after:opacity-[0.45] motion-safe:animate-rise-in">
+          <div className="max-w-[620px]">
+            <p className="mb-[18px] text-xs font-semibold uppercase tracking-[0.2em] text-[#d4f478]">
               Your preparation, at a glance
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="max-w-[600px] font-[Manrope] text-[clamp(2.25rem,5vw,4.35rem)] font-semibold leading-[0.99] tracking-[-0.07em]">
               Build your interview confidence.
             </h2>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500 sm:text-base">
+            <p className="mt-[18px] max-w-[430px] text-sm leading-6 text-[#b7c0b7] sm:text-base">
               A little practice every day adds up. Keep your questions organized
               and see your progress grow.
             </p>
           </div>
           <button
             onClick={() => setOpenModal(true)}
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-indigo-200 hover:scale-95 ease-in">
+            className="relative z-10 mt-1 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d4f478] px-5 py-3 text-sm font-semibold text-[#19251f] transition-[transform,background] duration-200 hover:-translate-y-0.5 hover:bg-[#e1ffa0] focus:outline-none focus:ring-4 focus:ring-indigo-200 sm:mt-0">
             <span aria-hidden="true" className="text-lg leading-none">
               +
             </span>{" "}
@@ -75,7 +75,7 @@ const Dashboard = () => {
         </section>
 
         <section
-          className="stats-grid grid grid-cols-1 gap-4 sm:grid-cols-4"
+          className="grid grid-cols-1 gap-[14px] sm:grid-cols-4 motion-safe:animate-rise-in motion-safe:[animation-delay:80ms]"
           aria-label="Practice summary">
           <StatCard
             title="Questions tracked"
@@ -133,50 +133,50 @@ const Dashboard = () => {
         </section>
 
         <section
-          className="progress-panel rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm sm:p-7"
+          className="rounded-[22px] border-0 bg-[#e6e9db] p-5 shadow-none sm:p-7 motion-safe:animate-rise-in motion-safe:[animation-delay:140ms]"
           aria-labelledby="progress-heading">
           <div className="mb-4 flex items-center justify-between gap-4">
             <div>
-              <h3 id="progress-heading" className="font-semibold">
+              <h3 id="progress-heading" className="font-[Manrope] font-semibold tracking-[-0.045em]">
                 Your progress
               </h3>
-              <p className="mt-1 text-sm text-slate-500">
+              <p className="mt-1 text-sm text-[#707a6d]">
                 Questions marked complete
               </p>
             </div>
-            <span className="text-2xl font-bold tracking-tight text-black">
+            <span className="font-[Manrope] text-2xl font-bold tracking-tight text-[#405a20]">
               {progress}
               <span className="text-base">%</span>
             </span>
           </div>
           <div
-            className="h-2.5 overflow-hidden rounded-full bg-slate-100"
+            className="h-[7px] overflow-hidden rounded-full bg-[#d1d6c6]"
             role="progressbar"
             aria-label="Overall practice progress"
             aria-valuenow={progress}
             aria-valuemin="0"
             aria-valuemax="100">
             <div
-              className="h-full rounded-full bg-green-600 transition-[width] duration-500"
+              className="h-full rounded-full bg-[#8dac45] transition-[width] duration-500"
               style={{ width: `${progress}%` }}
             />
           </div>
         </section>
 
         <section
-          className="question-section flex flex-col gap-4"
+          className="flex flex-col gap-4 motion-safe:animate-rise-in motion-safe:[animation-delay:200ms]"
           aria-labelledby="questions-heading">
           <div className="flex flex-col gap-1">
             <h3
               id="questions-heading"
-              className="text-xl font-bold tracking-tight">
+              className="font-[Manrope] text-xl font-bold tracking-[-0.045em]">
               Your questions
             </h3>
             <p className="text-sm text-slate-500">
               Find the next thing to work on.
             </p>
           </div>
-          <div className="filter-panel grid grid-cols-1 gap-3 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 rounded-[18px] border border-[#e3e5dc] bg-[#fafaf6] p-4 shadow-none sm:grid-cols-2 lg:grid-cols-4">
             <label className="relative sm:col-span-2 lg:col-span-1">
               <span className="sr-only">Search questions</span>
               <span
@@ -189,7 +189,7 @@ const Dashboard = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 type="search"
                 placeholder="Search questions..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-3 text-sm outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                className="w-full rounded-xl border border-[#e3e5dc] bg-[#f4f5ef] py-2.5 pl-9 pr-3 text-sm text-[#26332a] outline-none transition focus:border-[#9bad72] focus:bg-white focus:ring-4 focus:ring-[#e5edcf]"
               />
             </label>
             <label>
@@ -197,7 +197,7 @@ const Dashboard = () => {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50">
+                className="w-full rounded-xl border border-[#e3e5dc] bg-[#f4f5ef] px-3 py-2.5 text-sm text-[#26332a] outline-none focus:border-[#9bad72] focus:ring-4 focus:ring-[#e5edcf]">
                 <option value="all">All categories</option>
                 {categories.map((item) => (
                   <option key={item} value={item}>
@@ -211,7 +211,7 @@ const Dashboard = () => {
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50">
+                className="w-full rounded-xl border border-[#e3e5dc] bg-[#f4f5ef] px-3 py-2.5 text-sm text-[#26332a] outline-none focus:border-[#9bad72] focus:ring-4 focus:ring-[#e5edcf]">
                 <option value="all">All difficulties</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -223,7 +223,7 @@ const Dashboard = () => {
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50">
+                className="w-full rounded-xl border border-[#e3e5dc] bg-[#f4f5ef] px-3 py-2.5 text-sm text-[#26332a] outline-none focus:border-[#9bad72] focus:ring-4 focus:ring-[#e5edcf]">
                 <option value="all">All statuses</option>
                 <option value="pending">Not started</option>
                 <option value="in progress">In progress</option>
@@ -243,18 +243,18 @@ const Dashboard = () => {
               />
             ))}
             {filteredQuestions.length === 0 && (
-              <div className="empty-panel rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-12 text-center">
+              <div className="rounded-[22px] border border-dashed border-[#d2d7c8] bg-[#fafaf6] px-6 py-12 text-center">
                 <div
-                  className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-indigo-50 text-xl text-indigo-600"
+                  className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#edf2e4] text-xl text-[#607a30]"
                   aria-hidden="true">
                   {questions.length ? "⌕" : "+"}
                 </div>
-                <h4 className="font-semibold">
+                <h4 className="font-semibold text-[#26332a]">
                   {questions.length
                     ? "No questions match these filters"
                     : "Start with one question"}
                 </h4>
-                <p className="mx-auto mt-1 max-w-sm text-sm text-slate-500">
+                <p className="mx-auto mt-1 max-w-sm text-sm text-[#26332a]">
                   {questions.length
                     ? "Try a different search or clear a filter to see your practice list."
                     : "Add a question you want to practice and keep your preparation in one place."}
@@ -267,13 +267,13 @@ const Dashboard = () => {
                       setDifficulty("all");
                       setFilter("all");
                     }}
-                    className="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-700">
+                    className="mt-4 text-sm font-semibold text-[#607a30] hover:text-[#405a20]">
                     Clear filters
                   </button>
                 ) : (
                   <button
                     onClick={() => setOpenModal(true)}
-                    className="mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+                    className="mt-4 rounded-lg bg-[#19251f] px-4 py-2 text-sm font-semibold text-white hover:bg-[#405a20]">
                     Add your first question
                   </button>
                 )}
